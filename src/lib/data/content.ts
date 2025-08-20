@@ -22,6 +22,13 @@ export const content: ContentItem[] = [
     imgSrc: "/games/doom/doom.png",
     category: "game"
   },
+  {
+    title: "Flipping Emoji",
+    description: "Match the emojis by flipping them over!",
+    link: "/games/emoji",
+    imgSrc: "/games/emoji/emoji.png",
+    category: "game"
+  }
 
   // Projects
   {
