@@ -1,5 +1,3 @@
-
-
 <script lang="ts">
   import { onMount } from 'svelte';
   import { goto } from '$app/navigation';
@@ -9,10 +7,12 @@
   }
 
   let canvas: HTMLCanvasElement;
-  let ctx: CanvasRenderingContext2D;
+  let ctx!: CanvasRenderingContext2D;  // definite assignment (!)
 
-  const canvasWidth = 800;
-  const canvasHeight = 600;
+  const baseWidth = 800;
+  const baseHeight = 600;
+  let canvasWidth = baseWidth;
+  let canvasHeight = baseHeight;
 
   // Game state
   let player = { x: 350, y: 520, width: 100, height: 50, speed: 60 };
@@ -29,11 +29,9 @@
   let introText = "Hello! I am Harsh, and I love mangoes. But there is a problem... The ground is slippery so I need to avoid falling and breaking my back! Can you help me catch the mangoes before I fall?";
   let displayedText = "";
   let textIndex = 0;
-  let typingSpeed = 1; // characters per frame
+  let typingSpeed = 1;
 
   // Images
-  
-
   let basketImg: HTMLImageElement;
   let mangoImg: HTMLImageElement;
   let harshImg: HTMLImageElement;
@@ -47,8 +45,33 @@
 
     harshImg = new Image();
     harshImg.src = '/games/harsh/harsh.png';
+
+    const context = canvas.getContext("2d");
+    if (!context) {
+      console.error("Canvas context not found!");
+      return;
+    }
+    ctx = context;
+
+    resizeCanvas();
+    window.addEventListener("resize", resizeCanvas);
+    window.addEventListener("keydown", handleKey);
+
+    typeIntroText();
+    draw();
+    gameLoop();
   });
 
+  function resizeCanvas() {
+    const container = canvas.parentElement as HTMLElement;
+    if (!container) return;
+    const scale = Math.min(container.clientWidth / baseWidth, container.clientHeight / baseHeight);
+    canvasWidth = baseWidth * scale;
+    canvasHeight = baseHeight * scale;
+    canvas.width = canvasWidth;
+    canvas.height = canvasHeight;
+    ctx.setTransform(scale, 0, 0, scale, 0, 0); // scale drawing
+  }
 
   // Typing animation
   function typeIntroText() {
@@ -62,13 +85,12 @@
   // Spawn mangoes
   function spawnObstacle() {
     const width = 50;
-    const x = Math.random() * (canvasWidth - width);
+    const x = Math.random() * (baseWidth - width);
     let speed = 0;
     switch(level) {
       case 1: speed = Math.random() * 1 + 2; break;
       case 2: speed = Math.random() * 2 + 3; break;
       case 3: speed = Math.random() * 3 + 4; break;
-      case 4: speed = Math.random() * 4 + 5; break;
       default: speed = Math.random() * 5 + 6;
     }
     obstacles.push({ x, y: -50, width, height: 50, speed });
@@ -78,26 +100,28 @@
   function handleKey(e: KeyboardEvent) {
     if (showIntro) return;
     if (e.code === "Space") {
-      isRunning = !isRunning; // pause/resume with space
+      isRunning = !isRunning;
       return;
     }
     if (!isRunning) return;
-    switch(e.key.toLowerCase()) {
+    movePlayer(e.key.toLowerCase());
+  }
+
+  // Move player (keyboard + on-screen buttons)
+  function movePlayer(dir: string) {
+    switch(dir) {
       case 'a': case 'arrowleft': if (player.x > 0) player.x -= player.speed; break;
-      case 'd': case 'arrowright': if (player.x + player.width < canvasWidth) player.x += player.speed; break;
+      case 'd': case 'arrowright': if (player.x + player.width < baseWidth) player.x += player.speed; break;
       case 'w': case 'arrowup': if (player.y > 0) player.y -= player.speed; break;
-      case 's': case 'arrowdown': if (player.y + player.height < canvasHeight) player.y += player.speed; break;
+      case 's': case 'arrowdown': if (player.y + player.height < baseHeight) player.y += player.speed; break;
     }
   }
 
   // Game logic
   function update() {
     if (!isRunning || gameOver) return;
-
     obstacles.forEach((obs, i) => {
       obs.y += obs.speed;
-
-      // Catch mango
       if (
         player.x < obs.x + obs.width &&
         player.x + player.width > obs.x &&
@@ -107,9 +131,7 @@
         score += 1;
         obstacles.splice(i, 1);
       }
-
-      // Missed mango
-      if (obs.y > canvasHeight) {
+      if (obs.y > baseHeight) {
         missed += 1;
         obstacles.splice(i, 1);
         if (missed >= 4) {
@@ -118,18 +140,13 @@
         }
       }
     });
-
-    // Spawn new mangoes more frequently as level increases
     if (Math.random() < 0.005 * level) spawnObstacle();
-
-    // Update level based on score
     if (score < 5) level = 1;
     else if (score < 15) level = 2;
     else if (score < 30) level = 3;
     else level = 4;
   }
 
-  // Draw multi-line text
   function wrapText(context: CanvasRenderingContext2D, text: string, x: number, y: number, maxWidth: number, lineHeight: number) {
     const words = text.split(' ');
     let line = '';
@@ -148,52 +165,42 @@
     context.fillText(line, x, y);
   }
 
-  // Draw everything
-  // Draw everything
-function draw() {
-    ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+  function draw() {
+    ctx.clearRect(0, 0, baseWidth, baseHeight);
 
-    // Background gradient (sky + field)
-    const gradient = ctx.createLinearGradient(0,0,0,canvasHeight);
-    gradient.addColorStop(0, '#87CEEB'); // sky
+    const gradient = ctx.createLinearGradient(0,0,0,baseHeight);
+    gradient.addColorStop(0, '#87CEEB');
     gradient.addColorStop(0.7, '#87CEEB');
-    gradient.addColorStop(1, '#98FB98'); // green field
+    gradient.addColorStop(1, '#98FB98');
     ctx.fillStyle = gradient;
-    ctx.fillRect(0,0,canvasWidth,canvasHeight);
+    ctx.fillRect(0,0,baseWidth,baseHeight);
 
-    // Draw game title
     ctx.fillStyle = '#333';
     ctx.font = '36px Arial';
     ctx.textAlign = 'center';
-    ctx.fillText('The Tale of Harsh and mangoes', canvasWidth / 2, 50);
-    ctx.textAlign = 'start'; // reset for other text
+    ctx.fillText('The Tale of Harsh and Mangoes', baseWidth / 2, 50);
+    ctx.textAlign = 'start';
 
     if (showIntro) {
-      // Draw Harsh smaller
       const harshWidth = harshImg.width * 0.5;
       const harshHeight = harshImg.height * 0.5;
       const bounce = Math.sin(Date.now() / 200) * 10;
-      ctx.drawImage(harshImg, canvasWidth / 2 - harshWidth / 2, canvasHeight / 2 - harshHeight / 2 + bounce, harshWidth, harshHeight);
+      ctx.drawImage(harshImg, baseWidth / 2 - harshWidth / 2, baseHeight / 2 - harshHeight / 2 + bounce, harshWidth, harshHeight);
 
-      // Dialog box
       ctx.fillStyle = 'rgba(255,255,255,0.8)';
-      ctx.fillRect(50, canvasHeight - 180, 700, 120);
+      ctx.fillRect(50, baseHeight - 180, 700, 120);
       ctx.strokeStyle = '#333';
-      ctx.strokeRect(50, canvasHeight - 180, 700, 120);
+      ctx.strokeRect(50, baseHeight - 180, 700, 120);
 
       ctx.fillStyle = '#333';
       ctx.font = '22px Arial';
-      wrapText(ctx, displayedText, 60, canvasHeight - 150, 680, 28);
+      wrapText(ctx, displayedText, 60, baseHeight - 150, 680, 28);
       return;
     }
 
-    // Draw basket
     ctx.drawImage(basketImg, player.x, player.y, player.width, player.height);
-
-    // Draw mangoes
     obstacles.forEach(obs => ctx.drawImage(mangoImg, obs.x, obs.y, obs.width, obs.height));
 
-    // Stats
     ctx.fillStyle = 'black';
     ctx.font = '24px Arial';
     ctx.fillText(`Score: ${score}`, 10, 30);
@@ -204,20 +211,13 @@ function draw() {
       ctx.fillStyle = 'black';
       ctx.font = '28px Arial';
       ctx.fillText('Press Start to play!', 270, 280);
-      ctx.font = '20px Arial';
-      ctx.fillText('Use WASD or Arrow keys to move the basket', 230, 320);
-      ctx.fillText('Press SPACE to pause/resume', 250, 350);
     }
-
     if (gameOver) {
       ctx.fillStyle = 'red';
       ctx.font = '48px Arial';
       ctx.fillText('Oh no! Harsh fell Down!', 230, 300);
-      ctx.font = '28px Arial';
-      ctx.fillText('He broke his back! Press Restart to try again.', 140, 340);
     }
   }
-
 
   function gameLoop() {
     update();
@@ -230,7 +230,6 @@ function draw() {
       showIntro = false;
       isRunning = true;
     } else if (!isRunning) isRunning = true;
-
     if (!animationId) gameLoop();
   }
 
@@ -243,47 +242,27 @@ function draw() {
     score = 0;
     missed = 0;
     level = 1;
-    player.x = canvasWidth / 2 - player.width / 2;
-    player.y = canvasHeight - player.height - 10;
+    player.x = baseWidth / 2 - player.width / 2;
+    player.y = baseHeight - player.height - 10;
     displayedText = "";
     textIndex = 0;
     showIntro = true;
     typeIntroText();
     startGame();
   }
-
-  onMount(() => {
-    const context = canvas.getContext('2d');
-    if (!context) return console.error('Canvas context not found!');
-    ctx = context;
-    window.addEventListener('keydown', handleKey);
-    typeIntroText();
-    draw();
-    gameLoop();
-  });
 </script>
-
-
 
 <style>
   h1.page-title {
-    font-weight: 900;        /* Makes it very bold */
-    font-size: 3rem;         /* Adjust size */
-    text-align: center;      /* Center it horizontally */
-    margin-top: 2rem;        /* Space from top */
-    margin-bottom: 2rem;     /* Space below */
-    color: #222;             /* Dark color */
-    font-family: 'Arial Black', sans-serif;  /* Optional bold font */
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.3); /* Optional shadow */
+    font-weight: 900;
+    font-size: 3rem;
+    text-align: center;
+    margin: 2rem 0;
+    color: #222;
   }
-  .back-button-container {
-    display: flex;
-    justify-content: center; /* centers horizontally */
-    margin-bottom: 1.5rem;  /* spacing from the title */
-  }
+  .back-button-container { display:flex; justify-content:center; margin-bottom:1.5rem; }
   .back-button {
     padding: 10px 20px;
-    margin: 1rem 0;
     font-size: 16px;
     font-weight: bold;
     background: #242424;
@@ -291,39 +270,48 @@ function draw() {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
-    transition: all 0.2s;
   }
-
-  .back-button:hover {
-    background: #444444;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
-  }
-
-  body { margin:0; font-family:sans-serif; background:#e0f7fa; }
-  .game-container { display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:100vh; }
-  canvas { border:3px solid #333; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.3); }
-  .buttons { margin-top:20px; display:flex; gap:15px; }
+  .game-container { display:flex; flex-direction:column; align-items:center; justify-content:center; }
+  canvas { border:3px solid #333; border-radius:10px; max-width:95vw; height:auto; }
+  .buttons, .dpad { margin-top:20px; display:flex; gap:15px; flex-wrap:wrap; justify-content:center; }
   button {
     padding:12px 25px; font-size:16px; cursor:pointer;
     background:#0288d1; color:#fff; border:none; border-radius:5px;
-    box-shadow:0 3px 6px rgba(0,0,0,0.2); transition: all 0.2s;
   }
-  button:hover { background:#026fa1; transform:translateY(-2px); box-shadow:0 5px 10px rgba(0,0,0,0.3); }
-  p { font-size:18px; margin:5px; }
+  .dpad { display:grid; grid-template-areas:
+      ". up ."
+      "left center right"
+      ". down ."; gap:8px; }
+  .dpad button { width:60px; height:60px; font-size:20px; font-weight:bold; }
+  .up { grid-area:up; }
+  .down { grid-area:down; }
+  .left { grid-area:left; }
+  .right { grid-area:right; }
 </style>
+
 <h1 class="page-title">Harsh's Mango Adventure</h1>
 <div class="back-button-container">
   <button class="back-button" on:click={goToGames}>← Back to Games</button>
 </div>
+
 <div class="game-container">
-  <canvas bind:this={canvas} width={canvasWidth} height={canvasHeight}></canvas>
+  <canvas bind:this={canvas}></canvas>
+
+  <!-- Start/Pause/Restart -->
   <div class="buttons">
     <button on:click={startGame}>Start</button>
     <button on:click={pauseGame}>Pause</button>
     <button on:click={restartGame}>Restart</button>
   </div>
+
+  <!-- Game Boy style D-pad -->
+  <div class="dpad">
+    <button class="up" on:click={() => movePlayer('arrowup')}>▲</button>
+    <button class="left" on:click={() => movePlayer('arrowleft')}>◀</button>
+    <button class="right" on:click={() => movePlayer('arrowright')}>▶</button>
+    <button class="down" on:click={() => movePlayer('arrowdown')}>▼</button>
+  </div>
+
   <p>Score: {score}</p>
   <p>Missed: {missed}/4</p>
 </div>
