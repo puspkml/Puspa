@@ -140,7 +140,7 @@
         }
       }
     });
-    if (Math.random() < 0.005 * level) spawnObstacle();
+    if (Math.random() < 0.01 * level) spawnObstacle();
     if (score < 5) level = 1;
     else if (score < 15) level = 2;
     else if (score < 30) level = 3;
