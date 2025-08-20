@@ -88,10 +88,10 @@
     const x = Math.random() * (baseWidth - width);
     let speed = 0;
     switch(level) {
-      case 1: speed = Math.random() * 1 + 2; break;
-      case 2: speed = Math.random() * 2 + 3; break;
-      case 3: speed = Math.random() * 3 + 4; break;
-      default: speed = Math.random() * 5 + 6;
+      case 1: speed = Math.random() * 2 + 3; break;
+      case 2: speed = Math.random() * 3 + 4; break;
+      case 3: speed = Math.random() * 4 + 5; break;
+      default: speed = Math.random() * 6 + 7;
     }
     obstacles.push({ x, y: -50, width, height: 50, speed });
   }
