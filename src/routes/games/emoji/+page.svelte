@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { emoji } from './emoji'
+	import { emoji } from '$lib/data/emoji'
 
 	type State = 'start' | 'playing' | 'paused' | 'won' | 'lost'
 
