@@ -28,7 +28,7 @@ export const content: ContentItem[] = [
     link: "/games/emoji",
     imgSrc: "/games/emoji/emoji.png",
     category: "game"
-  }
+  },
 
   // Projects
   {
