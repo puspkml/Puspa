@@ -17,7 +17,7 @@ export const content: ContentItem[] = [
   },
   {
     title: "Doom",
-    description: "A classic Doom game hosted here.",
+    description: "A classic Doom game hosted here made by Cornelius Diekmann, battaile,and Mark.",
     link: "https://diekmann.github.io/wasm-fizzbuzz/doom/",
     imgSrc: "/games/doom/doom.png",
     category: "game"
