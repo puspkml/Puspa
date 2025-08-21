@@ -23,8 +23,8 @@ export const content: ContentItem[] = [
     category: "game"
   },
   {
-    title: "Flipping Emoji",
-    description: "Match the emojis by flipping them over!",
+    title: "Memory Match: Flipping Emoji",
+    description: "Match the emojis by remembering the positions and flipping them over!",
     link: "/games/emoji",
     imgSrc: "/games/emoji/emoji.png",
     category: "game"
