@@ -388,9 +388,25 @@
   width: 240;       /* Takes available width */
   max-width: 500;  /* Prevents it from being too big */
   height: auto;      /* Keeps correct ratio */
-}
+  }
+  
+  .back_to_games {
+    color: #1a1a1a;
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  h1 {
+    color: #1a1a1a;
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: bolder;
+  }
 
 </style>
+
+<h1>HARSH'S MANGO ADVENTURE</h1>
 
 <main class="gameboy-wrapper">
   <div class="gameboy">
@@ -416,3 +432,5 @@
     </div>
   </div>
 </main>
+<div style="height: 20px;"></div>
+<div class = "back_to_games" on:click={goToGames} style="cursor: pointer;">&#8592; Back to Games</div>

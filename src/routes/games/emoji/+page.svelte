@@ -1,6 +1,11 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import { emoji } from "$lib/data/emoji";
+  import { goto } from '$app/navigation';
+
+  function goToGames() {
+    goto('/games');
+  }
 
   let canvas: HTMLCanvasElement;
   let ctx: CanvasRenderingContext2D;
@@ -267,3 +272,6 @@
     </div>
   {/if}
 </div>
+
+
+<div class = "bg-zinc-300 items-center px-6 py-4" on:click={goToGames} style="cursor: pointer;">&#8592; Back to Games</div>
