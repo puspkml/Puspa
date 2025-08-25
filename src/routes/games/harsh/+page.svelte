@@ -7,14 +7,13 @@
   }
 
   let canvas: HTMLCanvasElement;
-  let ctx!: CanvasRenderingContext2D;  // definite assignment (!)
+  let ctx!: CanvasRenderingContext2D;
 
-  const baseWidth = 800;
-  const baseHeight = 600;
+  const baseWidth = 1000;
+  const baseHeight = 700;
   let canvasWidth = baseWidth;
   let canvasHeight = baseHeight;
 
-  // Game state
   let player = { x: 350, y: 520, width: 100, height: 50, speed: 60 };
   let obstacles: { x: number; y: number; width: number; height: number; speed: number }[] = [];
   let score = 0;
@@ -24,14 +23,13 @@
   let isRunning = false;
   let animationId: number;
 
-  // Intro state
   let showIntro = true;
-  let introText = "Hello! I am Harsh, and I love mangoes. But there is a problem... The ground is slippery so I need to avoid falling and breaking my back! Can you help me catch the mangoes before I fall?";
+  let introText =
+    "Hello! I am Harsh, and I love mangoes. But there is a problem... The ground is slippery so I need to avoid falling and breaking my back! Can you help me catch the mangoes before I fall?";
   let displayedText = "";
   let textIndex = 0;
   let typingSpeed = 1;
 
-  // Images
   let basketImg: HTMLImageElement;
   let mangoImg: HTMLImageElement;
   let harshImg: HTMLImageElement;
@@ -70,10 +68,9 @@
     canvasHeight = baseHeight * scale;
     canvas.width = canvasWidth;
     canvas.height = canvasHeight;
-    ctx.setTransform(scale, 0, 0, scale, 0, 0); // scale drawing
+    ctx.setTransform(scale, 0, 0, scale, 0, 0);
   }
 
-  // Typing animation
   function typeIntroText() {
     if (textIndex < introText.length) {
       displayedText += introText[textIndex];
@@ -82,21 +79,26 @@
     }
   }
 
-  // Spawn mangoes
   function spawnObstacle() {
     const width = 50;
     const x = Math.random() * (baseWidth - width);
     let speed = 0;
-    switch(level) {
-      case 1: speed = Math.random() * 2 + 3; break;
-      case 2: speed = Math.random() * 3 + 4; break;
-      case 3: speed = Math.random() * 4 + 5; break;
-      default: speed = Math.random() * 6 + 7;
+    switch (level) {
+      case 1:
+        speed = Math.random() * 2 + 3;
+        break;
+      case 2:
+        speed = Math.random() * 3 + 4;
+        break;
+      case 3:
+        speed = Math.random() * 4 + 5;
+        break;
+      default:
+        speed = Math.random() * 6 + 6;
     }
     obstacles.push({ x, y: -50, width, height: 50, speed });
   }
 
-  // Key handling
   function handleKey(e: KeyboardEvent) {
     if (showIntro) return;
     if (e.code === "Space") {
@@ -107,17 +109,27 @@
     movePlayer(e.key.toLowerCase());
   }
 
-  // Move player (keyboard + on-screen buttons)
   function movePlayer(dir: string) {
-    switch(dir) {
-      case 'a': case 'arrowleft': if (player.x > 0) player.x -= player.speed; break;
-      case 'd': case 'arrowright': if (player.x + player.width < baseWidth) player.x += player.speed; break;
-      case 'w': case 'arrowup': if (player.y > 0) player.y -= player.speed; break;
-      case 's': case 'arrowdown': if (player.y + player.height < baseHeight) player.y += player.speed; break;
+    switch (dir) {
+      case 'a':
+      case 'arrowleft':
+        if (player.x > 0) player.x -= player.speed;
+        break;
+      case 'd':
+      case 'arrowright':
+        if (player.x + player.width < baseWidth) player.x += player.speed;
+        break;
+      case 'w':
+      case 'arrowup':
+        if (player.y > 0) player.y -= player.speed;
+        break;
+      case 's':
+      case 'arrowdown':
+        if (player.y + player.height < baseHeight) player.y += player.speed;
+        break;
     }
   }
 
-  // Game logic
   function update() {
     if (!isRunning || gameOver) return;
     obstacles.forEach((obs, i) => {
@@ -168,12 +180,12 @@
   function draw() {
     ctx.clearRect(0, 0, baseWidth, baseHeight);
 
-    const gradient = ctx.createLinearGradient(0,0,0,baseHeight);
+    const gradient = ctx.createLinearGradient(0, 0, 0, baseHeight);
     gradient.addColorStop(0, '#87CEEB');
     gradient.addColorStop(0.7, '#87CEEB');
     gradient.addColorStop(1, '#98FB98');
     ctx.fillStyle = gradient;
-    ctx.fillRect(0,0,baseWidth,baseHeight);
+    ctx.fillRect(0, 0, baseWidth, baseHeight);
 
     ctx.fillStyle = '#333';
     ctx.font = '36px Arial';
@@ -253,65 +265,154 @@
 </script>
 
 <style>
-  h1.page-title {
-    font-weight: 900;
-    font-size: 3rem;
-    text-align: center;
-    margin: 2rem 0;
-    color: #222;
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #1a1a1a;
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
   }
-  .back-button-container { display:flex; justify-content:center; margin-bottom:1.5rem; }
-  .back-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    background: #242424;
+
+  .gameboy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #dcdcdc;
+    padding: 20px;
+    border-radius: 25px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+    width: 420px;
+    height: 700px;
+    max-width: 90vw;
+    max-height: 95vh;
+    justify-content: space-between;
+  }
+
+  .screen {
+    background: #a4c639;
+    border: 6px solid #555;
+    border-radius: 15px;
+    width: 140%;
+    height: 65%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0 6px 12px rgba(0, 0, 0, 0.4);
+  }
+
+  canvas {
+    background: #7CFC00;
+    width: 150%;
+    height: 60%;
+    border-radius: 8px;
+  }
+
+  .top-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    margin: 12px 0;
+  }
+
+  .top-buttons button {
+    background: #333;
     color: white;
+    font-size: 14px;
+    padding: 10px 18px;
+    border-radius: 6px;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease;
   }
-  .game-container { display:flex; flex-direction:column; align-items:center; justify-content:center; }
-  canvas { border:3px solid #333; border-radius:10px; max-width:95vw; height:auto; }
-  .buttons, .dpad { margin-top:20px; display:flex; gap:15px; flex-wrap:wrap; justify-content:center; }
-  button {
-    padding:12px 25px; font-size:16px; cursor:pointer;
-    background:#0288d1; color:#fff; border:none; border-radius:5px;
+
+  .top-buttons button:hover {
+    background: #444;
   }
-  .dpad { display:grid; grid-template-areas:
+
+  .controls {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 25px;
+  }
+
+  .dpad {
+    display: grid;
+    grid-template-areas:
       ". up ."
-      "left center right"
-      ". down ."; gap:8px; }
-  .dpad button { width:60px; height:60px; font-size:20px; font-weight:bold; }
-  .up { grid-area:up; }
-  .down { grid-area:down; }
-  .left { grid-area:left; }
-  .right { grid-area:right; }
+      "left . right"
+      ". down .";
+    gap: 12px;
+  }
+
+  .dpad button, .buttons button {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background: #444;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .dpad button:hover, .buttons button:hover {
+    background: #555;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+  .gameboy-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: full;
+    background: #ffffff;
+  }
+  .screen canvas {
+  width: 240;       /* Takes available width */
+  max-width: 500;  /* Prevents it from being too big */
+  height: auto;      /* Keeps correct ratio */
+}
+
 </style>
 
-<h1 class="page-title">Harsh's Mango Adventure</h1>
-<div class="back-button-container">
-  <button class="back-button" on:click={goToGames}>← Back to Games</button>
-</div>
-
-<div class="game-container">
-  <canvas bind:this={canvas}></canvas>
-
-  <!-- Start/Pause/Restart -->
-  <div class="buttons">
-    <button on:click={startGame}>Start</button>
-    <button on:click={pauseGame}>Pause</button>
-    <button on:click={restartGame}>Restart</button>
+<main class="gameboy-wrapper">
+  <div class="gameboy">
+    <div class="screen">
+      <canvas bind:this={canvas} width="240" height="160"></canvas>
+    </div>
+    <div class="top-buttons">
+      <button on:click={startGame}>Start</button>
+      <button on:click={pauseGame}>Pause</button>
+      <button on:click={restartGame}>Restart</button>
+    </div>
+    <div class="controls">
+      <div class="dpad">
+        <button style="grid-area: up;" on:click={() => movePlayer('arrowup')}>↑</button>
+        <button style="grid-area: left;" on:click={() => movePlayer('arrowleft')}>←</button>
+        <button style="grid-area: right;" on:click={() => movePlayer('arrowright')}>→</button>
+        <button style="grid-area: down;" on:click={() => movePlayer('arrowdown')}>↓</button>
+      </div>
+      <div class="buttons">
+        <button on:click={startGame}>A</button>
+        <button on:click={pauseGame}>B</button>
+      </div>
+    </div>
   </div>
-
-  <!-- Game Boy style D-pad -->
-  <div class="dpad">
-    <button class="up" on:click={() => movePlayer('arrowup')}>▲</button>
-    <button class="left" on:click={() => movePlayer('arrowleft')}>◀</button>
-    <button class="right" on:click={() => movePlayer('arrowright')}>▶</button>
-    <button class="down" on:click={() => movePlayer('arrowdown')}>▼</button>
-  </div>
-
-  <p>Score: {score}</p>
-  <p>Missed: {missed}/4</p>
-</div>
+</main>
