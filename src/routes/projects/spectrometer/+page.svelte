@@ -43,6 +43,23 @@
     background-color: #555;
     margin: 2rem 0;
   }
+
+  .image-row {
+    display: flex;
+    gap: 20px;          /* spacing between images */
+    align-items: flex-start;
+  }
+  .image-row img {
+    width: 300px;       /* adjust size */
+    height: auto;
+    border: 1px solid #ccc; /* optional styling */
+    border-radius: 8px;     /* optional rounded corners */
+  }
+  .image-row p {
+    text-align: center; /* captions under images */
+    max-width: 300px;
+  }
+
 </style>
 
 <div class="report-container">
@@ -171,12 +188,16 @@ A small prism was mounted on top of the photonic crystal to facilitate the excit
 The modular design allowed seamless swapping between mirror and cuvette adapters, demonstrating potential for rapid testing. Integration with photonic crystals further enabled surface-level interaction detection.
 .</p>
 
-  <img src="/projects/spectrometer/WhatsApp Image 2025-06-28 at 16.19.37_cb283bf0.jpg" alt="Spectrum using existing app" />
-  <p><em>Figure 3: Spectrum analysed using the already available application.</em></p>
-
-  <img src="/projects/spectrometer/WhatsApp Image 2025-06-28 at 16.18.20_47934bc1.jpg" alt="Spectrum using developed app" />
-  <p><em>Figure 4: Spectrum analysed using the application developed in this project.</em></p>
-
+  <div class="image-row">
+    <div>
+      <img src="/projects/spectrometer/WhatsApp Image 2025-06-28 at 16.19.37_cb283bf0.jpg" alt="Spectrum using existing app">
+      <p><em>Figure 3: Spectrum analysed using the already available application.</em></p>
+    </div>
+    <div>
+      <img src="/projects/spectrometer/WhatsApp Image 2025-06-28 at 16.18.20_47934bc1.jpg" alt="Spectrum using developed app">
+      <p><em>Figure 4: Spectrum analysed using the application developed in this project.</em></p>
+    </div>
+  </div>
   <strong><h2>Conclusion</h2></strong>
   <p>This project successfully illustrates the potential of building a low-cost, portable, and customizable spectrometer by integrating 3D-printed components with smartphone-based sensing. By combining fundamental concepts of optics with practical design and digital tools, we have created a device that not only serves educational purposes but also holds promise for basic analytical applications.
 
