@@ -4,6 +4,7 @@
 	import NavBar from '$lib/components/NavBar.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit';
+	import { injectAnalytics } from '@vercel/analytics/sveltekit'
 
 	injectSpeedInsights();
 
