@@ -60,6 +60,28 @@
     max-width: 300px;
   }
 
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .gallery img {
+    width: 100%;
+    max-height: 220px; /* you can adjust this for scaling */
+    object-fit: contain; /* keeps aspect ratio */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+
+  .gallery p {
+    margin-top: 6px;
+    font-size: 14px;
+    font-style: italic;
+  }
+
 </style>
 
 <div class="report-container">
@@ -162,7 +184,7 @@ A small prism was mounted on top of the photonic crystal to facilitate the excit
     This tool can be accessed at: <a href="https://saispectrum.streamlit.app/" target="_blank">Sai Spectrum Web App</a>
   </p>
 
-  <h2>Operating Procedure of the Spectrometer</h2>
+  <strong><h2>Operating Procedure of the Spectrometer</h2></strong>
   <ol>
     <li><strong>Power On the Light Source:</strong> Begin by turning on the white light source that will be used for spectral analysis.
 </li>
@@ -219,6 +241,48 @@ Special acknowledgement is given to Mr. Somnath Pandit, Research Scholar, for co
 Thanks are also due to the research scholars in the lab for fostering a collaborative and intellectually stimulating environment. Their assistance, technical insights, and camaraderie contributed greatly to the smooth progress of the work.
 
 Gratitude is also expressed to the Department of Physics, Indian Institute of Technology (IIT) Kharagpur) for providing the infrastructure, academic resources, and conducive environment necessary for the research. Continued collaboration with IIT Kharagpur is anticipated in future endeavors.</p>
+
+
+<!-- Image Gallery at the End -->
+<strong><h2 style="text-align:center; margin-top:40px;">Spectrometer Components</h2></strong>
+
+<div class="gallery">
+  <div>
+    <img src="/projects/spectrometer/lens_holder.jpg" alt="Lens holder" />
+    <p><em>Lens holder</em></p>
+  </div>
+
+  <div>
+    <img src="/projects/spectrometer/cuvette_holder.jpg" alt="Cuvette holder" />
+    <p><em>Cuvette holder</em></p>
+  </div>
+
+  <div>
+    <img src="/projects/spectrometer/mirror_holder.jpg" alt="Mirror holder" />
+    <p><em>Mirror holder</em></p>
+  </div>
+
+  <div>
+    <img src="/projects/spectrometer/apertures.jpg" alt="Apertures" />
+    <p><em>Apertures</em></p>
+  </div>
+
+  <div>
+    <img src="/projects/spectrometer/light_source.jpg" alt="Light source area" />
+    <p><em>Light source area</em></p>
+  </div>
+
+  <div>
+    <img src="/projects/spectrometer/phone_holder.jpg" alt="Phone holder" />
+    <p><em>Phone holder</em></p>
+  </div>
+
+  <div>
+    <img src="/projects/spectrometer/rechargeable_battery.jpg" alt="Rechargeable battery" />
+    <p><em>Rechargeable battery</em></p>
+  </div>
+</div>
+
 
   <strong><h2>References</h2></strong>
   <ol>
