@@ -62,7 +62,7 @@
       <p>
         I still remember my first physics class in my pre-collage (class 11). The teacher came in, wrote in big, bold letters:  
         <strong>“FORCES.”</strong>  
-        And he said: <q>There are four fundamental forces in nature. Everything that happens falls under these.</q>
+        And he said, <q>There are four fundamental forces in nature. Everything that happens falls under these.</q>
       </p>
 
       <p>
@@ -71,7 +71,7 @@
       </p>
 
       <p>
-        The whole class froze. And the teacher, clearly not ready for this level of chaos on Day 1, just smiled and said: <q>Those are probably tricks.</q>
+        The whole class froze. And the teacher, clearly not ready for this level of chaos on Day 1, just smiled and said' <q>Those are probably tricks.</q>
       </p>
 
       <p>
@@ -90,12 +90,12 @@
       </p>
 
       <p>
-        But here's where the game changed. The professor himself asked:  
+        But here's where the game changed. The professor himself asked,  
         <q>Among all these forces, where does spirituality fall? Have you ever seen materialization — things being created? Which of these forces does that come under?</q>
       </p>
 
       <p>
-        And then he said something I'll never forget:  
+        And then he said something I'll never forget,  
         <em>“There is something beyond our knowledge. A science we still don't understand. That science is spirituality.”</em>
       </p>
 
