@@ -56,5 +56,12 @@ export const content: ContentItem[] = [
     link: "/blogs/piccolo",
     imgSrc: "/blogs/piccolo/piccolo.jpg",
     category: "blog"
+  },
+  {
+    title: "Teaching myself Piccolo",
+    description: " me, the ever-curious troublemaker, raised my hand. Sir, in which force does the materialization of God — like vibhooti or honey appearing — fit? The whole class froze. And the teacher, clearly not ready for this level of chaos on Day 1...",
+    link: "/blogs/science_spirituality",
+    imgSrc: "/blogs/science_sprituality/science_spirituality.png",
+    category: "blog"
   }
 ];
