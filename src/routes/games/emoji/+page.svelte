@@ -13,7 +13,7 @@
   let size = 400; // Fixed board size
   let gridCols = 4;
   let gridRows = 4;
-
+  let timerLimit = 60; // seconds
   let level = 1;
   let timer = 0;
   let stars = 3;
@@ -45,7 +45,7 @@
     timerInterval = setInterval(() => {
       if (!gameOver) {
         timer++;
-        if (timer > 60) {
+        if (timer > timerLimit) {
           gameOver = true;
           clearInterval(timerInterval);
           showResultModal("Time Up!", "⏳ You failed this level.", "fail");
@@ -55,9 +55,9 @@
   }
 
   function calculateStars() {
-    if (timer <= 30) return 3;
-    if (timer <= 45) return 2;
-    if (timer <= 60) return 1;
+    if (timer <= timerLimit*0.5) return 3;
+    if (timer <= timerLimit*0.75) return 2;
+    if (timer <= timerLimit) return 1;
     return 0;
   }
 
@@ -71,6 +71,7 @@
   function nextLevel() {
     showModal = false;
     level++;
+    timerLimit = 60 + (level-1)*15; // Increase time limit
     if (gridCols < 8) {
       gridCols++;
       gridRows++;
@@ -222,6 +223,8 @@
       }, 500);
     }
   }
+
+  
 
   onMount(() => {
     ctx = canvas.getContext("2d")!;
