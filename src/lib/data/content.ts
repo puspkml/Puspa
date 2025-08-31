@@ -58,7 +58,7 @@ export const content: ContentItem[] = [
     category: "blog"
   },
   {
-    title: "Teaching myself Piccolo",
+    title: "The Fifth Force?!!!",
     description: " me, the ever-curious troublemaker, raised my hand. Sir, in which force does the materialization of God — like vibhooti or honey appearing — fit? The whole class froze. And the teacher, clearly not ready for this level of chaos on Day 1...",
     link: "/blogs/science_spirituality",
     imgSrc: "/blogs/science_sprituality/science_spirituality.png",
