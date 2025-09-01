@@ -12,6 +12,9 @@
 </script>
 
 <svelte:head>
+	<title>Puspa Kamal Rai</title>
+	<meta name="description" content="Official website of Puspa Kamal Rai — Physicist, Creator, and Curious Mind. Explore my blog, projects, and games." />
+	<meta name="author" content="Puspa Kamal Rai" />
 	<link rel="icon" href={favicon} />
 </svelte:head>
 

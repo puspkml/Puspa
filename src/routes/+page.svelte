@@ -2,6 +2,11 @@
   
 </script>
 
+<svelte:head>
+  <title>Puspa Kamal Rai</title>
+  <meta name="description" content="Puspa Kamal Rai — Physicist, Creator, and Curious Mind. Explore my blog, projects, and games." />
+</svelte:head>
+
 <div class="h-screen flex flex-col bg-gradient-to-b from-gray-50 to-white text-gray-800 font-sans overflow-hidden">
   
   <!-- Main -->
