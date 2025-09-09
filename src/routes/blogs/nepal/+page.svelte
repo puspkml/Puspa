@@ -83,17 +83,15 @@
 
           </div>
           <!-- Video -->
+
+
           <div class="sticky top-20 self-start">
-            <video 
-              autoplay 
-              muted
-              playsinline
-              loop
-              class="block mx-auto w-2/3 max-w-3xl rounded-lg shadow-lg"
-            >
-              <source src="/blogs/nepal/introverts.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+
+            <iframe
+            src="https://drive.google.com/file/d/1YC4kqAVcFuX85jRVaMY9eDmObVRfnFty/preview"
+            style="width:100%; max-width:800px; height:450px; border:none; border-radius:10px;"
+            allow="autoplay;muted"  ></iframe>
+
           </div>
         </div>
       </section>
@@ -123,16 +121,11 @@
           
           <!-- Video -->
           <div class="sticky top-20 self-start">
-            <video 
-              autoplay 
-              muted
-              playsinline
-              loop
-              class="block mx-auto w-2/3 max-w-3xl rounded-lg shadow-lg"
-            >
-              <source src="/blogs/nepal/student_shot.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+            <iframe
+            src="https://drive.google.com/file/d/1YeE20dSnADahmOA513Ay6zV1wqG1dPf_/preview"
+            style="width:100%; max-width:800px; height:450px; border:none; border-radius:10px;"
+            allow="autoplay;muted"  ></iframe>
+
             <p class="text-xs text-center mt-2">A student shot in school dress during the protest.</p>
           </div>
           <div class="prose prose-slate max-w-none text-justify">
@@ -304,17 +297,10 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
           
           <div class="sticky top-20 self-start">
-            <video 
-              controls  
-               
-              
-              playsinline
-              loop
-              class="block mx-auto w-2/3 max-w-3xl rounded-lg shadow-lg"
-            >
-              <source src="/blogs/nepal/girl.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+            <iframe
+            src="https://drive.google.com/file/d/1GO9eO8sOwlw62OCkMeI7GRpfKU-wkJI9/preview"
+            style="width:100%; max-width:800px; height:450px; border:none; border-radius:10px;"
+            allow="autoplay;"></iframe>
             <p class="text-s text-center mt-2"></p>
           </div>
           <!-- Text -->
