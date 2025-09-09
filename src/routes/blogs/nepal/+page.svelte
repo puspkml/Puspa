@@ -160,16 +160,12 @@
           
           <!-- Video -->
           <div class="sticky top-20 self-start">
-            <video 
-              autoplay 
-              muted
-              playsinline
-              loop
-              class="block mx-auto w-7/8 max-w-3xl rounded-lg shadow-lg"
-            >
-              <source src="/blogs/nepal/Hospital.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+            <iframe
+            src="https://drive.google.com/file/d/1tSrGKdd9XcBWD9GeA3pRNyx9YMS1LxaD/preview"
+            style="width:100%; max-width:800px; height:450px; border:none; border-radius:10px;"
+            allow="autoplay;muted"
+        ></iframe>
+           
           </div>
           <!-- Text -->
           <div class="prose prose-slate max-w-none text-justify">
@@ -210,16 +206,14 @@
 
 
       <div class="flex centre-20 self-start">
-        <video 
-          controls 
-          
-          playsinline
-          loop
-          class="block mx-auto w-1/3 max-w-3xl rounded-lg shadow-lg"
-        >
-          <source src="/blogs/nepal/doctor.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+
+        <iframe
+            src="https://drive.google.com/file/d/1WMIz469eGow6ZSp0f_71-Vx_NoWia0Dk/preview"
+            style="width:100%; max-width:800px; height:450px; border:none; border-radius:10px;"
+            allow="controls"
+        ></iframe>
+
+        
       </div>
       <p class="text-s text-center mt-2">"This government is failed", said doctor when police forcefully entered hospital to kill the protesters</p>
 
@@ -232,20 +226,13 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
           
 
-          <!-- Text -->
           
           <!-- Video -->
           <div class="sticky top-20 self-start">
-            <video 
-              autoplay 
-              muted
-              playsinline
-              loop
-              class="block mx-auto w-2/3 max-w-3xl rounded-lg shadow-lg"
-            >
-              <source src="/blogs/nepal/peoplefromhome.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+            <iframe src="https://drive.google.com/file/d/1cv9a3a38yxY0ooCkNjIeCGM6GWwz26cF/preview"
+              style="width:100%; max-width:800px; height:450px; border:none; border-radius:10px;"
+              allow="autoplay;muted"
+         ></iframe>
             <p class="text-s text-center mt-2">People in there home being scared of the fact that police can barge in anytime</p>
           </div>
           <div class="prose prose-slate max-w-none text-justify">
@@ -295,18 +282,13 @@
             </blockquote>
            </div>
           
-          <!-- Video -->
+
           <div class="sticky top-20 self-start">
-            <video 
-              autoplay 
-              muted
-              playsinline
-              loop
-              class="block mx-auto w-2/3 max-w-3xl rounded-lg shadow-lg"
-            >
-              <source src="/blogs/nepal/crowd.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+            <iframe
+            src="https://drive.google.com/file/d/1tahqYa5IiriW5x5BmxnWOKJAdvv6ITXs/preview"
+              style="width:100%; max-width:800px; height:450px; border:none; border-radius:10px;"
+              allow="autoplay;muted"
+         ></iframe>
             <p class="text-s text-center mt-2"></p>
           </div>
           
