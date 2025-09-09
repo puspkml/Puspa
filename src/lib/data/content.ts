@@ -63,5 +63,12 @@ export const content: ContentItem[] = [
     link: "/blogs/science_spirituality",
     imgSrc: "/blogs/science_sprituality/science_spirituality.png",
     category: "blog"
+  },
+  {
+    title: "Nepal On Fire",
+    description: "A dispatch from Nepal — the social media ban to hide burning flame against corruption, sparked mass protests, a deadly crackdown, and a nation asking who really benefits when truth is silenced.",
+    link: "/blogs/nepal",
+    imgSrc: "/blogs/nepal/front.jpg",
+    category: "blog"
   }
 ];
