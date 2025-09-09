@@ -40,7 +40,7 @@
       <section class="max-w-5xl mx-auto px-6 py-10">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
           <!-- Video -->
-          <div class="sticky top-20 self-start">
+          <div class="flex top-20 self-start">
                   <img src="/blogs/nepal/onepiece.PNG" alt="Protest in Nepal" class="inline-block flex-shrink-0 w-100 h-100 rounded-lg shadow" />
 
           </div>
