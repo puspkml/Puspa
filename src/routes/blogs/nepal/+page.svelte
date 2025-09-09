@@ -29,7 +29,7 @@
         </div>
       </div>
     </header>
-
+    <h2 class="text-s md:text-l font-serif font-semibold leading-tight text-zinc-700"><strong>Contributor- </strong> Dezen Sherpa</h2>
     <!-- Content -->
      
     <article class="prose prose-slate max-w-none">
