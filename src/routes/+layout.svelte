@@ -16,6 +16,7 @@
 	<meta name="description" content="Official website of Puspa Kamal Rai — Physicist, Creator, and Curious Mind. Explore my blog, projects, and games." />
 	<meta name="author" content="Puspa Kamal Rai" />
 	<link rel="icon" href={favicon} />
+	<meta name="msvalidate.01" content="53818719FC350BBFCFC7DB53DBA811B3" />
 </svelte:head>
 
 <div class="min-h-screen flex flex-col bg-gradient-to-b from-gray-50 to-white">
