@@ -1,55 +1,37 @@
 // src/routes/sitemap.xml/+server.ts
 import type { RequestHandler } from '@sveltejs/kit';
-import { content } from '$lib/data/content';
 
 const SITE_URL = 'https://puspa-opal.vercel.app';
 
 export const GET: RequestHandler = async () => {
-  // Top-level static pages
-  const staticPages = [
+  // Static pages including your full list
+  const allPages = [
     { loc: '/', priority: 1.0, changefreq: 'weekly' },
     { loc: '/blogs', priority: 0.9, changefreq: 'weekly' },
+    { loc: '/blogs/nepal', priority: 0.8, changefreq: 'weekly' },
+    { loc: '/blogs/piccolo', priority: 0.8, changefreq: 'weekly' },
+    { loc: '/blogs/science_spirituality', priority: 0.8, changefreq: 'weekly' },
     { loc: '/games', priority: 0.8, changefreq: 'weekly' },
+    { loc: '/games/emoji', priority: 0.7, changefreq: 'weekly' },
+    { loc: '/games/harsh', priority: 0.7, changefreq: 'weekly' },
+    { loc: '/physics', priority: 0.6, changefreq: 'monthly' },
+    { loc: '/physics/matrix_operator', priority: 0.5, changefreq: 'monthly' },
     { loc: '/projects', priority: 0.8, changefreq: 'monthly' },
-    { loc: '/physics', priority: 0.6, changefreq: 'monthly' }
-  ];
-
-  // Dynamic content pages from content.ts
-  const dynamicPages = content.map((item) => {
-    const isExternal = item.link.startsWith('http');
-    return {
-      loc: isExternal ? item.link : `${SITE_URL}${item.link}`,
-      priority:
-        item.category === 'blog'
-          ? 0.7
-          : item.category === 'game'
-          ? 0.6
-          : item.category === 'project'
-          ? 0.6
-          : 0.5,
-      changefreq: 'monthly'
-    };
-  });
-
-  const allUrls = [
-    ...staticPages.map((p) => ({
-      ...p,
-      loc: `${SITE_URL}${p.loc}`
-    })),
-    ...dynamicPages
+    { loc: '/projects/spectrometer', priority: 0.7, changefreq: 'monthly' },
+    { loc: '/sitemap.xml', priority: 0.0, changefreq: 'yearly' } // optional
   ];
 
   // Build XML
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${allUrls
+${allPages
   .map(
-    (u) => `
+    (p) => `
   <url>
-    <loc>${u.loc}</loc>
+    <loc>${SITE_URL}${p.loc}</loc>
     <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
-    <changefreq>${u.changefreq}</changefreq>
-    <priority>${u.priority}</priority>
+    <changefreq>${p.changefreq}</changefreq>
+    <priority>${p.priority}</priority>
   </url>`
   )
   .join('')}
