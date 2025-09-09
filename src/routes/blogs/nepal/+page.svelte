@@ -208,7 +208,7 @@
 
         
       </div>
-      <p class="text-s text-center mt-2">"This government is failed", said doctor when police forcefully entered hospital to kill the protesters</p>
+      <p class="text-s text-center mt-2">"This government has failed", said doctor when police forcefully entered hospital to kill the protesters</p>
 
 
 
