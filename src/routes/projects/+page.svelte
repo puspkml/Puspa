@@ -1,3 +1,8 @@
+<svelte:head>
+  <title>Puspa Kamal Rai | Projects</title>
+  <meta name="description" content="Offical website of Puspa Kamal Rai — The Projects completed and worked on are here. These projects are the solutions of the practical problems of daily life" />
+</svelte:head>
+
 <script lang="ts">
   interface Project {
     title: string;

@@ -1,3 +1,9 @@
+<svelte:head>
+  <title>Puspa Kamal Rai | Online Games</title>
+  <meta name="description" content="Offical website of Puspa Kamal Rai — This is the Virtual ground where the ideas come alive with the creation of games." />
+</svelte:head>
+
+
 <script lang="ts">
   // Define type for your content
   interface Game {

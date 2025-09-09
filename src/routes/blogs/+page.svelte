@@ -1,3 +1,9 @@
+
+
+<svelte:head>
+  <title>Puspa Kamal Rai | Blogs</title>
+  <meta name="description" content="Offical website of Puspa Kamal Rai — This is the canvas of thought that has been filled with the colours of self assessment" />
+</svelte:head>
 <script lang="ts">
   interface Blog {
     title: string;
