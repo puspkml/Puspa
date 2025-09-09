@@ -40,7 +40,7 @@
       <section class="max-w-5xl mx-auto px-6 py-10">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
           <!-- Video -->
-          <div class="flex top-20 self-start">
+          <div class="flex justify-center">
                   <img src="/blogs/nepal/onepiece.PNG" alt="Protest in Nepal" class="inline-block flex-shrink-0 w-100 h-100 rounded-lg shadow" />
 
           </div>
@@ -85,7 +85,7 @@
           <!-- Video -->
 
 
-          <div class="flex top-20 self-start">
+          <div class="flex justify-center">
 
             <iframe
             src="https://drive.google.com/file/d/1YC4kqAVcFuX85jRVaMY9eDmObVRfnFty/preview"
@@ -120,7 +120,7 @@
           <!-- Text -->
           
           <!-- Video -->
-          <div class="flex top-20 self-start">
+          <div class="flex justify-center">
             <iframe
             src="https://drive.google.com/file/d/1YeE20dSnADahmOA513Ay6zV1wqG1dPf_/preview"
             style="width:100%; max-width:800px; height:450px; border:none; border-radius:10px;"
@@ -152,7 +152,7 @@
 
           
           <!-- Video -->
-          <div class="flex top-20 self-start">
+          <div class="flex justify-center">
             <iframe
             src="https://drive.google.com/file/d/1tSrGKdd9XcBWD9GeA3pRNyx9YMS1LxaD/preview"
             style="width:100%; max-width:800px; height:450px; border:none; border-radius:10px;"
@@ -221,7 +221,7 @@
 
           
           <!-- Video -->
-          <div class="flex top-20 self-start">
+          <div class="flex justify-center">
             <iframe src="https://drive.google.com/file/d/1cv9a3a38yxY0ooCkNjIeCGM6GWwz26cF/preview"
               style="width:100%; max-width:800px; height:450px; border:none; border-radius:10px;"
               allow="autoplay;muted"
@@ -276,7 +276,7 @@
            </div>
           
 
-          <div class="flex top-20 self-start">
+          <div class="flex justify-center">
             <iframe
             src="https://drive.google.com/file/d/1tahqYa5IiriW5x5BmxnWOKJAdvv6ITXs/preview"
               style="width:100%; max-width:800px; height:450px; border:none; border-radius:10px;"
@@ -296,7 +296,7 @@
 <section class="max-w-5xl mx-auto px-6 py-10">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
           
-          <div class="flex top-20 self-start">
+          <div class="flex justify-center">
             <iframe
             src="https://drive.google.com/file/d/1GO9eO8sOwlw62OCkMeI7GRpfKU-wkJI9/preview"
             style="width:100%; max-width:800px; height:450px; border:none; border-radius:10px;"
