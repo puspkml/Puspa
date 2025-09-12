@@ -39,6 +39,8 @@
 	"dependencies": {
 		"@vercel/analytics": "^1.5.0",
 		"@vercel/speed-insights": "^1.2.0",
-		"katex": "^0.16.22"
+		"canvas-confetti": "^1.9.3",
+		"katex": "^0.16.22",
+		"svelte-dnd-action": "^0.9.65"
 	}
 }
