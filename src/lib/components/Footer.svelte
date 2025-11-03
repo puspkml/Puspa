@@ -27,7 +27,7 @@
 	];
 </script>
 
-<footer class="relative bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white">
+<footer class="relative bg-gradient-to-br from-zinc-900 via-slate-600 to-slate-900 text-white">
 	<!-- Decorative top border -->
 	<div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"></div>
 
@@ -91,7 +91,14 @@
 					© {year} Puspa Kamal Rai. All Rights Reserved.
 				</p>
 				<p class="text-xs text-gray-500">
-					Built with <span class="text-red-400">♥</span> using SvelteKit & Tailwind CSS
+					<li>
+							<a
+								href={https://saichits.immadisairaj.dev/}
+								class="text-sm text-gray-300 hover:text-white transition-colors duration-200 hover:translate-x-1 inline-block"
+							>
+					With Blessings of <span class="text-red-400">Bhagavan Sri Sathya Sai Baba</span>
+						</a>
+					</li>
 				</p>
 			</div>
 		</div>
