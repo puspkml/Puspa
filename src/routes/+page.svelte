@@ -14,11 +14,12 @@
     <h2 class="text-4xl md:text-5xl font-serif font-bold mb-4">
       <span class="text-zinc-600">Physicronics</span>,Codelian & <span class="text-gray-600">Musicologist</span>
     </h2>
-    <p class="text-lg italic text-gray-500 max-w-2xl leading-relaxed">
-      I’m Puspa Kamal Rai, a Physics undergraduate at Sri Sathya Sai Institute of Higher Learning, passionate about research, design, and technology-driven innovation. My interests span semiconductors, optics, embedded systems, and automation, where I love turning theoretical concepts into real-world solutions.
-
+    <p class="text-lg italic text-gray-500 max-w-3xl leading-relaxed">
+      I’m a Physics undergraduate at Sri Sathya Sai Institute of Higher Learning, passionate about research, design, and technology-driven innovation. My interests span semiconductors, optics, embedded systems, and automation, where I love turning theoretical concepts into real-world solutions.</p>
+    <p class="text-lg italic text-gray-600 max-w-3xl leading-relaxed">
 I’ve developed projects like a 3D-printed smartphone spectrometer at IIT Kharagpur, a wireless automated bell system, and a custom UPS, combining creativity with technical precision. Skilled in Python, Svelte Kit, Arduino, and circuit design, I enjoy exploring how physics and coding intersect to build impactful systems.
-
+    </p>
+    <p class="text-lg italic text-gray-500 max-w-3xl leading-relaxed">
 Beyond science, I’m a flutist and piccolo player in the University Brass Band - <span class="text-zinc-600">Rhythmic Energy</span>, where music sharpens my focus and creativity. As a leader and collaborator, I strive to bring clarity, innovation, and purpose to everything I do — blending logic with artistry to create meaningful impact.
     </p>
   </main>
