@@ -30,10 +30,10 @@
   }
 </script>
 
-<header class="fixed top-0 left-0 w-full bg-white border-b border-gray-200 z-50 shadow-sm">
+<header class="fixed top-0 left-0 w-full bg-gray-50 border-b border-gray-200 z-50 shadow-sm">
   <div class="flex flex-col items-center px-6 py-4">
     <!-- Title -->
-    <h1 class="text-2xl md:text-3xl font-bold tracking-wide font-serif">Puspa Kamal Rai</h1>
+    <h1 class="text-2xl md:text-3xl item-right font-bold tracking-wide font-serif">Puspa Kamal Rai</h1>
 
     <!-- Nav links -->
     <ul class="flex space-x-6 mt-2">
