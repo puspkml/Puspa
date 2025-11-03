@@ -22,7 +22,7 @@
 	<meta name="msvalidate.01" content="53818719FC350BBFCFC7DB53DBA811B3" />
 </svelte:head>
 
-<div class="flex min-h-screen flex-col bg-gradient-to-b from-gray-50 to-white">
+<div class="flex min-h-screen flex-col bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
 	<NavBar />
 
 	<main class="flex-1 pt-[220px]">
