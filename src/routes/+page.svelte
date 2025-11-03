@@ -43,8 +43,8 @@
   <!-- Main content -->
   <main class="flex-1 p-10 overflow-y-auto">
     <section class="max-w-4xl mx-auto">
-      <h1 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-        Welcome to <span class="text-zinc-600">Puspa Kamal Rai’s</span> Space
+      <h1 class="text-4xl md:text-5xl font-serif font-bold mb-4">
+        <span class="text-zinc-600">Physicronics</span>,Codelian & <span class="text-gray-600">Musicologist</span>
       </h1>
       <p class="text-lg text-gray-700 mb-8 leading-relaxed">
         The best of both worlds — <strong>Physics</strong> and <strong>Programming</strong>. I’m a Physics undergraduate at the
@@ -52,9 +52,7 @@
         research, design, and technology-driven innovation.
       </p>
 
-      <h2 class="text-4xl md:text-5xl font-serif font-bold mb-4">
-        <span class="text-zinc-600">Physicronics</span>,Codelian & <span class="text-gray-600">Musicologist</span>
-      </h2>
+      
 
       <article class="space-y-6 text-gray-700 leading-relaxed">
         <p>
