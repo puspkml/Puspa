@@ -43,29 +43,29 @@
         <span class="text-zinc-600">Physicronics</span>,Codelian & <span class="text-gray-600">Musicologist</span>
       </h1>
       <p class="text-lg text-gray-700 mb-8 leading-relaxed">
-        The best of both worlds — <strong>Physics</strong> and <strong>Programming</strong>. I’m a Physics undergraduate at the
+        I’m a Physics postgraduate at the
         <span class="text-zinc-600 font-semibold">Sri Sathya Sai Institute of Higher Learning</span>, passionate about
-        research, design, and technology-driven innovation.
+        research, design, and technology-driven innovation. Driven by a deep interest in Physics and Programming, I integrate both disciplines to transform innovative ideas into practical solutions.
       </p>
 
       
 
       <article class="space-y-6 text-gray-700 leading-relaxed">
         <p>
-          My interests span semiconductors, optics, embedded systems, and automation — where I love turning theoretical concepts into real-world solutions.
+          My interests span semiconductors, optics, electronics, embedded systems, and automation using micro-controllers — where I love turning theoretical concepts into real-world solutions.
         </p>
 
         <p>
-          I’ve developed projects like a <strong>3D-printed smartphone spectrometer</strong> at IIT Kharagpur, a
-          <strong>wireless automated bell system</strong>, and a <strong>custom UPS</strong>, combining creativity with technical precision.
-          Skilled in <span class="text-zinc-600 font-medium">Python, SvelteKit, Arduino</span>, and circuit design, I explore how
+          I’ve worked on projects like a <strong>3D-printed smartphone spectrometer</strong> at IIT Kharagpur, a
+          <strong>wireless automated bell system</strong>, a <strong>DREAM assay based colorimeter</strong> and a <strong>custom UPS</strong>, combining creativity with technical precision.
+          Skilled in <span class="text-zinc-600 font-medium">Python, SvelteKit, Arduino, LabView, LTSpice,</span>, and circuit design, I explore how
           physics and coding intersect to build impactful systems.
         </p>
 
         <p>
-          Beyond science, I’m a <strong>flutist and piccolo player</strong> in the University Brass Band –
-          <span class="text-zinc-600">Rhythmic Energy</span>, where music sharpens my focus and creativity. As a leader and collaborator,
-          I strive to bring clarity, innovation, and purpose to everything I do — blending logic with artistry to create meaningful impact.
+          Beyond science, I’m a <strong>Flutist and Piccolo player</strong> in the University Brass Band –
+          <span class="text-zinc-900">Rhythmic Energy</span>, where music sharpens my focus and creativity. I have a strong passion for composing and arranging music tailored for brass ensembles, quintets, and more. 
+          As a leader and collaborator, I strive to bring clarity, innovation, and purpose to everything I do — blending logic with artistry to create meaningful impact.
         </p>
       </article>
     </section>
