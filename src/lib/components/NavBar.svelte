@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { content, type ContentItem } from '$lib/data/content';
 	import { onMount } from 'svelte';
 	import { theme } from '$lib/stores/theme';
 	import { page } from '$app/stores';
@@ -20,22 +19,20 @@
 
 	function searchContent() {
 		const q = query.toLowerCase().trim();
-
-		if (!q) {
-			results = [];
-			return;
-		}
-
-		results = content.filter(
-			(item) =>
-				item.title.toLowerCase().includes(q) ||
-				item.description.toLowerCase().includes(q) ||
-				item.category.toLowerCase().includes(q)
-		);
+		results = q
+			? content.filter(
+					(item) =>
+						item.title.toLowerCase().includes(q) ||
+						item.description.toLowerCase().includes(q) ||
+						item.category.toLowerCase().includes(q)
+			  )
+			: [];
 	}
 
 	function toggleTheme() {
-		theme.toggle();
+		currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+		localStorage.setItem('theme', currentTheme);
+		document.documentElement.classList.toggle('dark', currentTheme === 'dark');
 	}
 
 	function toggleMobileMenu() {
