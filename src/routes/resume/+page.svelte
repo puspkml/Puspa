@@ -6,7 +6,7 @@
 
 	onMount(async () => {
 		try {
-			const response = await fetch('/resume.pdf', { method: 'HEAD' });
+			const response = await fetch('/Resume.pdf', { method: 'HEAD' });
 			pdfExists = response.ok;
 		} catch (error) {
 			pdfExists = false;
