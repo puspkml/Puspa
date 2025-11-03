@@ -17,7 +17,7 @@
 
 	function downloadResume() {
 		const link = document.createElement('a');
-		link.href = '/resume.pdf';
+		link.href = '/Resume.pdf';
 		link.download = 'Puspa_Kamal_Rai_Resume.pdf';
 		link.click();
 	}
