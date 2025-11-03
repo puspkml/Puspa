@@ -17,24 +17,20 @@
         <p class="text-gray-500 font-semibold uppercase tracking-wide mb-2">Getting Started</p>
         <ul class="space-y-1">
           <li><a href="#" class="block text-gray-800 hover:text-gray-900 font-medium">Welcome</a></li>
-          <li><a href="#" class="block text-gray-600 hover:text-gray-900">Quickstart</a></li>
         </ul>
       </div>
 
       <div>
         <p class="text-gray-500 font-semibold uppercase tracking-wide mb-2">Projects</p>
         <ul class="space-y-1">
-          <li><a href="#" class="block text-gray-600 hover:text-gray-900">Spectrometer</a></li>
-          <li><a href="#" class="block text-gray-600 hover:text-gray-900">Automated Bell System</a></li>
-          <li><a href="#" class="block text-gray-600 hover:text-gray-900">UPS & Power Projects</a></li>
+          <li><a href="/projects" class="block text-gray-600 hover:text-gray-900">Projects</a></li>
         </ul>
       </div>
 
       <div>
         <p class="text-gray-500 font-semibold uppercase tracking-wide mb-2">More</p>
         <ul class="space-y-1">
-          <li><a href="#" class="block text-gray-600 hover:text-gray-900">Music & Leadership</a></li>
-          <li><a href="#" class="block text-gray-600 hover:text-gray-900">Contact</a></li>
+          <li><a href="/blogs" class="block text-gray-600 hover:text-gray-900">Blogs</a></li>
         </ul>
       </div>
     </nav>
