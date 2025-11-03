@@ -12,7 +12,7 @@
   <aside class="w-64 border-r border-gray-200 bg-gray-50 px-6 py-8 hidden lg:block">
     <h1 class="text-xl font-bold text-gray-900 mb-8">Guides</h1>
 
-    <nav class="space-y-6 text-sm">
+    <nav class=" text-sm">
       <div>
         <p class="text-gray-500 font-semibold uppercase tracking-wide mb-2">Getting Started</p>
         <ul class="space-y-1">
