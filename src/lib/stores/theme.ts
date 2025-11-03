@@ -16,6 +16,20 @@ const getInitialTheme = (): Theme => {
 	return 'light';
 };
 
+const applyTheme = (theme: Theme) => {
+	if (!browser) return;
+	
+	const root = document.documentElement;
+	
+	if (theme === 'dark') {
+		root.classList.add('dark');
+		root.setAttribute('data-theme', 'dark');
+	} else {
+		root.classList.remove('dark');
+		root.setAttribute('data-theme', 'light');
+	}
+};
+
 const createThemeStore = () => {
 	const { subscribe, set, update } = writable<Theme>(getInitialTheme());
 
@@ -26,7 +40,7 @@ const createThemeStore = () => {
 				const newTheme = current === 'light' ? 'dark' : 'light';
 				if (browser) {
 					localStorage.setItem('theme', newTheme);
-					document.documentElement.classList.toggle('dark', newTheme === 'dark');
+					applyTheme(newTheme);
 				}
 				return newTheme;
 			});
@@ -34,14 +48,14 @@ const createThemeStore = () => {
 		set: (theme: Theme) => {
 			if (browser) {
 				localStorage.setItem('theme', theme);
-				document.documentElement.classList.toggle('dark', theme === 'dark');
+				applyTheme(theme);
 			}
 			set(theme);
 		},
 		init: () => {
 			if (browser) {
 				const theme = getInitialTheme();
-				document.documentElement.classList.toggle('dark', theme === 'dark');
+				applyTheme(theme);
 				set(theme);
 			}
 		}
