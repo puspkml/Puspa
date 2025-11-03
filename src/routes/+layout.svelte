@@ -23,7 +23,7 @@
 	<title>Puspa Kamal Rai</title>
 	<meta
 		name="description"
-		content="Official website of Puspa Kamal Rai — Physicist, Creator, and Curious Mind. Explore my blog, projects, and games."
+		content="Physics postgraduate student passionate about electronics, semiconductors, optics, embedded systems, programming, and web development. Flutist and Piccolo player. Music Composer and Brass ensemble Arranger"
 	/>
 	<meta name="author" content="Puspa Kamal Rai" />
 	<link rel="icon" href={favicon} />
