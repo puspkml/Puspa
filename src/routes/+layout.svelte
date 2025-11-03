@@ -3,12 +3,20 @@
 	import favicon from '$lib/assets/favicon.svg';
 	import NavBar from '$lib/components/NavBar.svelte';
 	import Footer from '$lib/components/Footer.svelte';
+	import ScrollToTop from '$lib/components/ScrollToTop.svelte';
 	import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit';
 	import { injectAnalytics } from '@vercel/analytics/sveltekit';
+	import { theme } from '$lib/stores/theme';
+	import { onMount } from 'svelte';
 
 	injectSpeedInsights();
+	injectAnalytics();
 
 	let { children } = $props();
+
+	onMount(() => {
+		theme.init();
+	});
 </script>
 
 <svelte:head>
@@ -22,12 +30,14 @@
 	<meta name="msvalidate.01" content="53818719FC350BBFCFC7DB53DBA811B3" />
 </svelte:head>
 
-<div class="flex min-h-screen flex-col bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
+<div class="flex min-h-screen flex-col bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
 	<NavBar />
 
-	<main class="flex-1 pt-[220px]">
-		<!-- Adjust padding to match navbar height -->
+	<main class="flex-1 pt-20 md:pt-24">
 		{@render children?.()}
 	</main>
+	
+	<Footer />
 </div>
-<Footer />
+
+<ScrollToTop />
