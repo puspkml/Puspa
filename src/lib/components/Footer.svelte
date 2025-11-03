@@ -91,14 +91,14 @@
 					© {year} Puspa Kamal Rai. All Rights Reserved.
 				</p>
 				<p class="text-xs text-gray-500">
-					<li>
+					
 							<a
-								href={https://saichits.immadisairaj.dev/}
+								href="https://saichits.immadisairaj.dev/"
 								class="text-sm text-gray-300 hover:text-white transition-colors duration-200 hover:translate-x-1 inline-block"
 							>
 					With Blessings of <span class="text-red-400">Bhagavan Sri Sathya Sai Baba</span>
 						</a>
-					</li>
+					
 				</p>
 			</div>
 		</div>
