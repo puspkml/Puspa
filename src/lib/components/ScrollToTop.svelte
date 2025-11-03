@@ -42,7 +42,7 @@
 {#if showButton}
 	<button
 		onclick={scrollToTop}
-		class="fixed bottom-8 right-8 z-40 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-blue-600 text-white shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl hover:from-blue-600 hover:to-blue-700 dark:from-blue-600 dark:to-blue-700 dark:hover:from-blue-700 dark:hover:to-blue-800 animate-in fade-in slide-in-from-bottom-4"
+		class="fixed top-8 centre-8 z-40 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-zinc-500 to-zinc-600 text-white shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl hover:from-zinc-600 hover:to-zinc-700 dark:from-zinc-600 dark:to-zinc-700 dark:hover:from-zinc-700 dark:hover:to-zinc-800 animate-in fade-in slide-in-from-bottom-4"
 		aria-label="Scroll to top"
 	>
 		<svg
@@ -54,7 +54,7 @@
 			<path
 				stroke-linecap="round"
 				stroke-linejoin="round"
-				stroke-width="2.5"
+				stroke-width="5"
 				d="M5 10l7-7m0 0l7 7m-7-7v18"
 			/>
 		</svg>
