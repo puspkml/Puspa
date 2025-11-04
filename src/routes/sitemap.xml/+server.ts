@@ -18,7 +18,8 @@ export const GET: RequestHandler = async () => {
 		{ loc: '/physics/matrix_operator', priority: 0.5, changefreq: 'monthly' },
 		{ loc: '/projects', priority: 0.8, changefreq: 'monthly' },
 		{ loc: '/projects/spectrometer', priority: 0.7, changefreq: 'monthly' },
-		{ loc: '/sitemap.xml', priority: 0.0, changefreq: 'yearly' } // optional
+		{ loc: '/sitemap.xml', priority: 0.0, changefreq: 'yearly' }, // optional
+		{ loc: '/Puspakamal.png', priority: 1.0, changefreq: 'weekly'}
 	];
 
 	// Build XML
