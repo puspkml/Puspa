@@ -40,7 +40,7 @@
 	<!-- Open Graph (for link previews on social media) -->
 	<meta property="og:title" content="Puspa Kamal Rai - Physicist, Developer & Musician" />
 	<meta property="og:description" content="Physicist and developer passionate about semiconductors, optics, and embedded systems. Plays Piccolo and Flute in University Brass Band - Rhythmic Energy" />
-	<meta property="og:image" content="https://puspa-opal.vercel.app/flautist.png" />
+	<meta property="og:image" content="https://puspa-opal.vercel.app/Puspakamal.png" />
 	<meta property="og:url" content="https://puspa-opal.vercel.app/" />
 	<meta property="og:type" content="website" />
 
