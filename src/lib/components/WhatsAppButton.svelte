@@ -1,5 +1,5 @@
 <script lang="ts">
-	const whatsappNumber = '919091239255';
+	const whatsappNumber = '919091329255';
 	const message = 'Hello Puspa! I visited your website and would like to connect.';
 	const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 </script>
